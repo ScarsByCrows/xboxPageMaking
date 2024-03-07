@@ -1,0 +1,138 @@
+---
+	const { title } = Astro.props;
+
+	const items = [{
+		icon: '',
+		name: 'Opción 1'
+	},
+	{
+		icon: '',
+		name: 'Opción 2'
+	},
+	{
+		icon: '',
+		name: 'Opción 3'
+	}]
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Astro description" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+</head>
+
+<body>
+	<header>Acá va el Encabezado</header>
+	<div class="carrousel">Slider de imágenes</div>
+	<nav>
+		{
+		items.map((item) => <a href="#" class="option">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+				style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+				<path
+					d="M6 3h2v2H6zm2 16h3v2H8zm8-16h2v2h-2zm-3 16h3v2h-3zm7-8V9h-2V7h-2V5h-2v2h-4V5H8v2H6v2H4v2H2v8h2v-4h2v4h2v-3h8v3h2v-4h2v4h2v-8zm-10 1H8V9h2zm6 0h-2V9h2z">
+				</path>
+			</svg>
+			{item.name}
+		</a>)
+		}
+
+	</nav>
+
+	<div class="grid-container">
+		<div class="area1">area1</div>
+		<div class="area2">area2</div>
+		<div class="area3">area3</div>
+		<div class="area4">area4</div>
+	</div>
+	<slot />
+</body>
+
+</html>
+<style is:global>
+
+	.grid-container {
+		display: grid;
+		grid-template-areas:'area1 area1 area2 area3'
+							'area1 area1 area2 area3'
+							'area4 area4 area2 area3' ;
+	}
+
+	.area1 {
+		grid-area: area1;
+		background: yellow;
+	}
+
+	.area2 {
+		grid-area: area2;
+		background: darkblue;
+	}
+
+	.area3 {
+		grid-area: area3;
+		background: darkviolet;
+	}
+
+	.area4 {
+		grid-area: area4;
+		background: darkgray;
+	}
+	.option {
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		background: purple;
+		width: 120px;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		transition: background 300ms ease-in-out;
+
+		&:hover {
+			background: orange;
+		}
+	}
+
+	nav {
+		background: blue;
+		height: 60px;
+		display: flex;
+
+	}
+
+	header {
+		background: red;
+		height: 56px;
+	}
+
+	.carrousel {
+		background: darkgreen;
+		height: 705px;
+
+	}
+
+	html,
+	body {
+		font-family: system-ui, sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
