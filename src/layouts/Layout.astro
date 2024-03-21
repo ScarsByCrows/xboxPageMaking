@@ -90,29 +90,27 @@ const menuItems = [
 			</div>
 		</menu>
 	</header>
-
-	<div class="relative">
-		<div class="absolute h-full left-20 flex items-center">
-			<h1 class="text-white text-6xl font-bold">FINAL FANTASY XIV <br>Online</h1>
-			<p class="text-white text-4xl absolute">Disfruta de una aventura aclamada por la crítica en Xbox Series X|S.</p>
-		</div>
-			<video
-				aria-label="Ambient video alt text"
-				poster="https://assets.xboxservices.com/assets/45/5a/455a189b-0e7a-48bc-a966-9bf5ec8c08c2.jpg?n=896254_Page-Hero-1084_1920x720_01.jpg"
-				muted=""
-				autoplay=""
-				loop=""
-				alt="Video de FINAL FANTASY XIV Online con imágenes del juego y cinemáticas"
-				><source
-					class="heroImgDesktop"
-					src="https://assets.xboxservices.com/assets/12/ff/12ff90f8-439f-42a6-892b-1bf80f02f027.mp4?n=FFXIV-Online_HP-Video_1920x720_04.mp4"
-					type="video/mp4"
-					srcset="https://assets.xboxservices.com/assets/12/ff/12ff90f8-439f-42a6-892b-1bf80f02f027.mp4?n=FFXIV-Online_HP-Video_1920x720_04.mp4"
-				/></video
-			>
-	</div>
 	<body>
-		<div class="carrousel">Slider de imágenes</div>
+		<div class="carrousel relative">
+			<div class="absolute h-full left-20 flex items-center">
+				<h1 class="text-white text-6xl font-bold">FINAL FANTASY XIV <br>Online</h1>
+				<p class="text-white text-[2rem] absolute mt-[15rem]">Disfruta de una aventura aclamada por la crítica en Xbox Series X|S.</p>
+			</div>
+				<video
+					aria-label="Ambient video alt text"
+					poster="https://assets.xboxservices.com/assets/45/5a/455a189b-0e7a-48bc-a966-9bf5ec8c08c2.jpg?n=896254_Page-Hero-1084_1920x720_01.jpg"
+					muted=""
+					autoplay=""
+					loop=""
+					alt="Video de FINAL FANTASY XIV Online con imágenes del juego y cinemáticas"
+					><source
+						class="heroImgDesktop"
+						src="https://assets.xboxservices.com/assets/12/ff/12ff90f8-439f-42a6-892b-1bf80f02f027.mp4?n=FFXIV-Online_HP-Video_1920x720_04.mp4"
+						type="video/mp4"
+						srcset="https://assets.xboxservices.com/assets/12/ff/12ff90f8-439f-42a6-892b-1bf80f02f027.mp4?n=FFXIV-Online_HP-Video_1920x720_04.mp4"
+					/></video
+				>
+		</div>
 		<nav>
 			{
 				items.map((item) => (
